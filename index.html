@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GRINDWORKS — prototype</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Bungee+Shade&family=Rubik:wght@500;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <div id="hud" class="hidden">
+      <div id="score-box" class="sticker">
+        <div class="label">SCORE</div>
+        <div id="score">0</div>
+        <div id="shipped"></div>
+      </div>
+
+      <div id="mode-badge" class="sticker"></div>
+      <div id="rec" class="sticker hidden"></div>
+
+      <div id="goals" class="panel">
+        <div class="panel-title">GOALS <span id="goals-count"></span></div>
+        <ul id="goal-list"></ul>
+      </div>
+
+      <div id="combo">
+        <div id="combo-names"></div>
+        <div id="combo-score"></div>
+      </div>
+      <div id="tally"></div>
+      <div id="bag-wrap"><div class="label">BAG</div><div id="bag"></div></div>
+      <div id="charge"><div id="charge-fill"></div><span>POP</span></div>
+      <div id="speed"></div>
+      <div id="hints"></div>
+      <div id="toasts"></div>
+
+      <div id="build-ui" class="hidden">
+        <div id="hotbar"></div>
+        <div id="piece-info" class="panel"></div>
+        <div id="ghost-panel" class="panel">
+          <div class="panel-title">GHOST CREW</div>
+          <div id="ghost-list"></div>
+        </div>
+      </div>
+      <div id="tooltip" class="hidden"></div>
+    </div>
+
+    <div id="title">
+      <div class="title-inner">
+        <div class="logo"><span>GRIND</span><span>WORKS</span></div>
+        <div class="tag">your best run becomes the machine</div>
+        <div class="cards">
+          <div class="card c1">
+            <h3>SKATE</h3>
+            <p><b>W</b> push · <b>S</b> brake · <b>A/D</b> steer &amp; spin</p>
+            <p><b>SPACE</b> hold to crouch, release to ollie (longer = higher; steering is limited while crouched) · <b>J</b> flip · <b>K</b> grab (hold) · <b>L</b> grind · <b>SHIFT</b> manual</p>
+            <p>Hold a direction while tricking for variants</p>
+            <p><b>R</b> record a Ghost loop · <b>T</b> respawn</p>
+          </div>
+          <div class="card c2">
+            <h3>BUILD</h3>
+            <p><b>TAB</b> switch modes anytime</p>
+            <p><b>1–7</b> pick piece · <b>R</b> rotate · <b>LMB</b> place (drag rails)</p>
+            <p><b>RMB / X</b> delete · <b>WASD</b> pan · <b>Q/E</b> turn · wheel zoom</p>
+          </div>
+          <div class="card c3">
+            <h3>PAD</h3>
+            <p><b>A</b> hold/release ollie · <b>X</b> flip · <b>B</b> grab · <b>Y</b> grind · <b>RT</b> manual</p>
+            <p><b>START</b> record · <b>SELECT</b> build mode</p>
+            <p>Build: stick moves cursor · <b>A</b> place · <b>B</b> delete · <b>Y</b> rotate · <b>LB/RB</b> piece</p>
+          </div>
+        </div>
+        <div class="loop-explainer">
+          <span class="chip ore">ORE</span> grind rails on the pink seam →
+          <span class="chip heat">HEAT</span> from grinding powers the
+          <span class="chip ingot">SMELTER</span> → skate it all to the
+          <span class="chip plate">SHIP LEDGE</span>. Then hit <b>R</b> and let a Ghost do it forever.
+        </div>
+        <button id="start-btn">DROP IN</button>
+        <div class="small">click or press any pad button · progress autosaves in this browser</div>
+      </div>
+    </div>
+
+    <div id="menu" class="hidden">
+      <div class="menu-inner panel">
+        <div class="panel-title big">PAUSED</div>
+        <button data-act="resume">RESUME</button>
+        <button data-act="sfx">SOUND: ON</button>
+        <button data-act="ghostpops">GHOST POPUPS: ON</button>
+        <button data-act="controls">CONTROLS</button>
+        <button data-act="reset" class="danger">RESET YARD</button>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
